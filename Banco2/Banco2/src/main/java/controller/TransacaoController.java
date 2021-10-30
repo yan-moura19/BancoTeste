@@ -69,7 +69,7 @@ public class TransacaoController {
 			}
 		}
 		for (Transacao transacao2  : transacoesDaConta) {
-			if(transacao2.getDataTransacao().isAfter(inicio) & transacao2.getDataTransacao().isBefore(inicio)) {
+			if(transacao2.getDataTransacao().isAfter(inicio) & transacao2.getDataTransacao().isBefore(fim)) {
 				transacoesDaContaPorPeriodo.add(transacao2);
 			}
 		}
