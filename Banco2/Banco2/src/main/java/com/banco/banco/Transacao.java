@@ -18,10 +18,11 @@ public class Transacao {
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private long idTransacao;
 	
-	@NonNull private long idConta;
+	
 	@NonNull private double valor;
 	@NonNull private LocalDate dataTransacao = LocalDate.now();
-	
+	@ManyToOne(optional = true)
+	private Conta idConta;
 	
 	
 	
