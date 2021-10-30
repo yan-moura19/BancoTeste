@@ -13,7 +13,6 @@ import lombok.NonNull;
 @Entity
 public class Transacao {
 	
-	
 	@Id
 	@GeneratedValue (strategy = GenerationType.AUTO)
 	private long idTransacao;
@@ -22,7 +21,6 @@ public class Transacao {
 	@NonNull private double valor;
 	@NonNull private LocalDate dataTransacao = LocalDate.now();
 	@ManyToOne(optional = true)
-	@JoinColumn(name = "idConta", referencedColumnName = "idConta",nullable = true)
 	private Conta idConta;
 	
 	
