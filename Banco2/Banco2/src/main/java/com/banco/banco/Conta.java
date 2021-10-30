@@ -21,7 +21,7 @@ public class Conta {
 	private long idConta;
 	
 	@NonNull
-	private long idPessoa;
+	
 	private double saldo = 0;
 	private double limiteSaqueDiario= 2000.0;
 	private boolean flagAtivo = false;
@@ -31,6 +31,8 @@ public class Conta {
 	@NonNull
 	private LocalDate dataCriacao = LocalDate.now();
 	
+	@ManyToOne(fetch = FetchType.EAGER)
+	private Pessoa idPessoa;
 	
 	
 	public Conta(long idConta, @NonNull long idPessoa, double saldo, double limiteSaqueDiario, boolean flagAtivo,
