@@ -22,6 +22,7 @@ public class Transacao {
 	@NonNull private double valor;
 	@NonNull private LocalDate dataTransacao = LocalDate.now();
 	@ManyToOne(optional = true)
+	@JoinColumn(name = "idConta", referencedColumnName = "idConta",nullable = true)
 	private Conta idConta;
 	
 	
