@@ -47,7 +47,7 @@ public class TransacaoController {
 		
 	}
 	@GetMapping("/transacoes/{id}")
-	public List<Transacao> extratoConta(@PathVariable(value = "id") Long idConta) {
+	public List<Transacao> extratoConta(@PathVariable(value = "id") Conta idConta) {
 		Iterable<Transacao> model = transacaoRepository.findAll();
 		List<Transacao> transacoesDaConta = new ArrayList<Transacao>();
 		for (Transacao transacao : model) {
@@ -59,7 +59,7 @@ public class TransacaoController {
 		return transacoesDaConta;
 	}
 	@GetMapping("/transacoes/{id}")
-	public List<Transacao> extratoContaPeriodo(@PathVariable(value = "id") Long idConta, LocalDate inicio, LocalDate fim) {
+	public List<Transacao> extratoContaPeriodo(@PathVariable(value = "id") Conta idConta, LocalDate inicio, LocalDate fim) {
 		Iterable<Transacao> model = transacaoRepository.findAll();
 		List<Transacao> transacoesDaConta = new ArrayList<Transacao>();
 		List<Transacao> transacoesDaContaPorPeriodo = new ArrayList<Transacao>();
